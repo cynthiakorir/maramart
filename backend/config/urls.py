@@ -1,3 +1,6 @@
+from django.urls import re_path
+from django.views.static import serve
+
 from django.http import JsonResponse
 from django.contrib import admin
 from django.urls import path, include
@@ -15,8 +18,11 @@ urlpatterns = [
     path('api/orders/', include('orders.urls')),
     path('api/payments/', include('payments.urls')),
 ]
-urlpatterns += static(
-        settings.MEDIA_URL,
-        document_root=settings.MEDIA_ROOT
+urlpatterns += [
+    re_path(
+        r'^media/(?P<path>.*)$',
+        serve,
+        {'document_root': settings.MEDIA_ROOT}
     )
-
+]
+#
