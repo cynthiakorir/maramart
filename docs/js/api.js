@@ -1,5 +1,5 @@
 (function () {
-  const API_BASE = 'http://127.0.0.1:8000/api';
+  const API_BASE = 'https://maramart.ethiodeploy.app/api';
   const TOKEN_KEY = 'maramartToken';
 
   async function request(path, options) {
