@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#153d2b">
+  <title>Checkout | MaraMart</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/api.js" defer></script>
+  <script src="js/main.js" defer></script>
+</head>
+<body data-page="checkout">
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="MaraMart home"><span class="brand-mark" aria-hidden="true">M</span><span>Mara<span class="brand-light">Mart</span></span></a>
+    <nav class="main-nav" aria-label="Main navigation"><a href="products.html">Shop</a><a href="cart.html">Cart</a></nav>
+    <div class="header-actions"><span class="account-label" id="account-label">Welcome, guest</span><button class="button button-quiet" id="account-button" type="button">Sign in</button><a class="button button-dark cart-toggle" href="cart.html">Cart <span class="cart-count" id="cart-count">0</span></a></div>
+  </header>
+  <main>
+    <section class="inner-hero"><p class="eyebrow">One last step</p><h1>Delivery & checkout</h1><p>Tell us where to deliver your order. You can request M-Pesa payment once the order is placed.</p></section>
+    <section class="page-section page-width">
+      <p class="status-message" id="checkout-status" role="status"></p>
+      <div class="checkout-layout" id="checkout-layout">
+        <section class="checkout-card">
+          <h2>Delivery details</h2>
+          <form class="checkout-form" id="checkout-form">
+            <label>Full name<input name="full_name" autocomplete="name" required></label>
+            <label>Phone number<input name="phone_number" type="tel" autocomplete="tel" placeholder="2547XXXXXXXX" required></label>
+            <label>Delivery address<textarea name="delivery_address" rows="3" autocomplete="street-address" required></textarea></label>
+            <button class="button button-dark button-wide" id="place-order-button" type="submit">Place order</button>
+          </form>
+          <div id="order-confirmation" hidden></div>
+        </section>
+        <aside class="summary-card">
+          <h2>Order summary</h2>
+          <div id="checkout-items"></div>
+          <div class="checkout-total"><span>Total</span><strong id="checkout-total">KSh 0.00</strong></div>
+        </aside>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer"><a class="brand brand-footer" href="index.html"><span class="brand-mark" aria-hidden="true">M</span><span>Mara<span class="brand-light">Mart</span></span></a><p>Good things, close to home.</p></footer>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
