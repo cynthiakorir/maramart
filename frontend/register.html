@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#153d2b">
+  <title>Create account | MaraMart</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/api.js" defer></script>
+  <script src="js/main.js" defer></script>
+</head>
+<body data-page="register">
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="MaraMart home"><span class="brand-mark" aria-hidden="true">M</span><span>Mara<span class="brand-light">Mart</span></span></a>
+    <nav class="main-nav" aria-label="Main navigation"><a href="products.html">Shop</a><a href="cart.html">Cart</a></nav>
+    <div class="header-actions"><span class="account-label" id="account-label">Welcome, guest</span><button class="button button-quiet" id="account-button" type="button">Sign in</button><a class="button button-dark cart-toggle" href="cart.html">Cart <span class="cart-count" id="cart-count">0</span></a></div>
+  </header>
+  <main class="auth-page">
+    <p class="eyebrow">Join the market</p><h1>Create your account</h1>
+    <form class="auth-form" id="register-form">
+      <label>Username<input name="username" autocomplete="username" required></label>
+      <label>Email<input name="email" type="email" autocomplete="email" required></label>
+      <label>Phone number<input name="phone_number" type="tel" autocomplete="tel" placeholder="2547XXXXXXXX" required></label>
+      <label>Password<input name="password" type="password" autocomplete="new-password" minlength="8" required></label>
+      <button class="button button-dark button-wide" type="submit">Create account</button>
+    </form>
+    <p class="form-message" id="form-message" role="status"></p>
+    <p class="muted">Already have an account? <a href="login.html">Sign in</a>.</p>
+  </main>
+  <footer class="site-footer"><a class="brand brand-footer" href="index.html"><span class="brand-mark" aria-hidden="true">M</span><span>Mara<span class="brand-light">Mart</span></span></a><p>Good things, close to home.</p></footer>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>

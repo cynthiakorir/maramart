@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#153d2b">
+  <title>Products | MaraMart</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/api.js" defer></script>
+  <script src="js/main.js" defer></script>
+</head>
+<body data-page="products">
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="MaraMart home"><span class="brand-mark" aria-hidden="true">M</span><span>Mara<span class="brand-light">Mart</span></span></a>
+    <nav class="main-nav" aria-label="Main navigation"><a href="products.html">Shop</a><a href="cart.html">Cart</a></nav>
+    <div class="header-actions"><span class="account-label" id="account-label">Welcome, guest</span><button class="button button-quiet" id="account-button" type="button">Sign in</button><a class="button button-dark cart-toggle" href="cart.html">Cart <span class="cart-count" id="cart-count">0</span></a></div>
+  </header>
+  <main>
+    <section class="inner-hero"><p class="eyebrow">The good stuff</p><h1>Shop the market</h1><p>Browse MaraMart products and find something good for your home.</p></section>
+    <section class="page-section page-width">
+      <div class="section-heading"><div><p class="eyebrow">Find your favorites</p><h2>All products</h2></div><label class="search-box"><span class="sr-only">Search products</span><span aria-hidden="true">⌕</span><input id="search-input" type="search" placeholder="Find something good"></label></div>
+      <div class="category-list" id="category-list" aria-label="Filter by category"></div>
+      <p class="status-message" id="products-status" role="status">Loading products…</p>
+      <div class="product-grid" id="product-grid"></div>
+    </section>
+  </main>
+  <footer class="site-footer"><a class="brand brand-footer" href="index.html"><span class="brand-mark" aria-hidden="true">M</span><span>Mara<span class="brand-light">Mart</span></span></a><p>Good things, close to home.</p></footer>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
