@@ -36,6 +36,7 @@ ALLOWED_HOSTS = [
     'localhost',
     '127.0.0.1',
     'primarily-darkened-grafting.ngrok-free.dev',
+    'maramart.ethiodeploy.app',
 ]
 
 
