@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/6.1/ref/settings/
 """
 import os
 from pathlib import Path
+from django.template.backends import django
 from dotenv import load_dotenv
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -24,10 +25,10 @@ load_dotenv(BASE_DIR / '.env')
 # See https://docs.djangoproject.com/en/6.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-ne#z*4!x36&m_=@96#+i6db4s_9szxsk4b9xwanxbcr8@&0^!a'
+SECRET_KEY = os.getenv('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.getenv('DEBUG') == 'True'
 
 ALLOWED_HOSTS = [
     'localhost',
@@ -92,15 +93,14 @@ WSGI_APPLICATION = 'config.wsgi.application'
 # https://docs.djangoproject.com/en/6.1/ref/settings/#databases
 
 #
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'maramart_db',
-        'USER': 'root',
-        'PASSWORD': '',
-        'HOST': 'localhost',
-        'PORT': '3306',
+        'NAME': os.getenv('DB_NAME', 'maramart_db'),
+        'USER': os.getenv('DB_USER', 'root'),
+        'PASSWORD': os.getenv('DB_PASSWORD', ''),
+        'HOST': os.getenv('DB_HOST', 'localhost'),
+        'PORT': os.getenv('DB_PORT', '3306'),
     }
 }
 # Password validation
